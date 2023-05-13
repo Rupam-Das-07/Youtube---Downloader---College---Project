@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+/* SOME GLOBAL SETUPS    */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* DARK MODE STATE STYLING    */
+:root .dark-mode {
+  --bg-main: #18122b;
+  --bg-primary: #ecf2ff;
+}
+
+.body .dark-mode {
+  background-color: var(--bg-main);
+  color: var(--bg-primary);
+}
+
+.dark-mode .a {
+  color: var(--bg-primary);
+}
+
+/* LIGHT MODE STATE STYLING   */
+:root {
+  --bg-main: #ecf2ff;
+  --bg-primary: #18122b;
+}
+
+html {
+  font-size: 62.5%;
+
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-main);
+  color: var(--bg-primary);
+}
+
+.header {
+  padding: 0 4.8rem;
+  /* 1 REM = 10PX  */
+  height: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0e2a47;
+}
+
+.header .logo {
+  height: 30rem;
+}
+
+.navbar-list {
+  display: flex;
+  gap: 4.8rem;
+  list-style: none;
+  position: relative;
+  top: 30px;
+}
+
+.navbar-link:link,
+.navbar-link:visited {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ffff;
+  transition: all 0.3s;
+}
+
+.navbar-link:hover,
+.navbar-link:active {
+  color: #ff6600;
+}
+
+/* HERO SECTION STYLING STARTS FROM HERE   */
+
+h1 {
+  position: relative;
+  top: 60px;
+  font-size: 40px;
+  transition: all 0.5s;
+  text-align: center;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  position: relative;
+  top: 70px;
+}
+
+.search-container input[type="text"] {
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  width: 50%;
+}
+
+.search-container button[type="submit"] {
+  background-color: #273c75;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* DARK MODE / LIGHT MODE SWITCHER STYLING   */
+
+.toggle-button {
+  height: 10rem;
+  display: flex;
+}
+
+#checkbox {
+  visibility: hidden;
+}
+
+.toggle-label {
+  width: 6rem;
+  height: 3rem;
+  background-color: var(--bg-primary);
+  display: inline-block;
+  position: relative;
+  border-radius: 10rem;
+}
+
+.toggle-ball {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--bg-main);
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  transition: all 0.2s linear;
+}
+
+/* CREATING A PSEUDO CLASS AND TARGETING THE ELEMENT WHICH IS UNDER ANOTHER SPECIFIC ELEMENT    */
+
+#checkbox:checked + .toggle-label .toggle-ball {
+  transform: translateX(3rem);
+  background-color: #5fc3e4;
+}
